@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MailForm Express</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-12 flex flex-col items-center">
+        <div class="bg-white rounded-xl shadow-2xl overflow-hidden w-full max-w-md">
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+                <h1 class="text-2xl font-bold flex items-center gap-2">
+                    <i data-feather="send"></i> Secure Form Submission
+                </h1>
+                <p class="text-blue-100 mt-1">Your information will be sent securely</p>
+            </div>
+
+            <form id="contactForm" class="p-6 space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <div class="relative">
+                        <i data-feather="mail" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="email" id="email" name="email" required 
+                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                            placeholder="your@email.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <div class="relative">
+                        <i data-feather="lock" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="password" id="password" name="password" required 
+                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="terms" class="ml-2 block text-sm text-gray-700">
+                        I agree to the <a href="#" class="text-blue-600 hover:underline">terms and conditions</a>
+                    </label>
+                </div>
+
+                <button type="submit" 
+                    class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition flex items-center justify-center gap-2">
+                    <i data-feather="send"></i> Submit Form
+                </button>
+            </form>
+        </div>
+
+        <div id="successMessage" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg max-w-md text-center">
+            <i data-feather="check-circle" class="inline-block mr-2"></i>
+            <span>Form submitted successfully! Check your inbox.</span>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
